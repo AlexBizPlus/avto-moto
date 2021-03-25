@@ -1,0 +1,4 @@
+export const SLIDER_IMAGE = `SLIDER_IMAGE`;
+export const SLIDER_CURRENT = `SLIDER_CURRENT`;
+export const TABS_ACTIVE = `TABS_ACTIVE`;
+export const TABS_SHOW_POPUP = `TABS_SHOW_POPUP`;

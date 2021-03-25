@@ -1,0 +1,121 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.cars-component {
+  @include flex-column(flex-start, center);
+  width: 100%;
+
+  &__wrapper {
+    @include flex-row(flex-start, flex-start);
+    flex-wrap: wrap;
+    width: $desktop;
+  }
+
+  &__right-section {
+    @include flex-column(flex-start, flex-start);
+    max-width: $desktop-right;
+    margin-top: 74px;
+    margin-left: 57px;
+  }
+
+  &__slider {
+    margin-top: 90px;
+    margin-bottom: 90px;
+    padding-left: 11px;
+  }
+
+  &__header {
+    @include title-bold-30;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &__short-list-wrapper {
+    @include list-reset;
+    @include flex-row(flex-start, center);
+    margin-top: 22px;
+    margin-left: 10px;
+  }
+
+  &__short-list-item {
+    @include flex-column(flex-start, center);
+    @include text-regular-16;
+    margin-right: 7px;
+    color: $dark;
+    opacity: 0.5;
+  }
+
+  &__short-list-icon {
+    @include flex-column(center, center);
+    width: 40px;
+    height: 40px;
+  }
+
+  &__price-wrapper {
+    @include flex-row(flex-start, center);
+    margin-top: 37px;
+    margin-bottom: 37px;
+    color: $dark;
+  }
+
+  &__price-actual {
+    @include text-bold-35;
+    margin-right: 33px;
+  }
+
+  &__price-old {
+    @include text-regular-20;
+    color: $dark-50;
+    position: relative;
+
+    &::before {
+      @include pseudo;
+      bottom: 50%;
+      left: -3px;
+      transform: skew(-15deg, -5deg);
+      width: 123px;
+      height: 1px;
+      background-color: $cross-line;
+    }
+  }
+
+  &__button {
+    @include text-semibold-14;
+    display: block;
+    padding: 17px 20px;
+    border: none;
+    background-color: $red;
+    color: $white;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+    outline: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $red-hover;
+    }
+
+    &_white {
+      @include text-semibold-14;
+      background-color: $white;
+      color: $red;
+      border: 1px solid $red;
+      outline: none;
+
+      &:hover,
+      &:active,
+      &:focus {
+        @include button-hover;
+      }
+
+      span {
+        @include text-regular-14;
+      }
+    }
+
+    &_margin-top {
+      margin-top: 16px;
+    }
+  }
+}

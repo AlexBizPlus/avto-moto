@@ -1,0 +1,205 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.tabs {
+  @include flex-column(flex-start, flex-start);
+
+  &__button-list {
+    @include flex-row(flex-start, flex-start);
+  }
+
+  &__button {
+    @include text-regular-20;
+    line-height: 26px;
+    background-color: $white;
+    color: $dark;
+    width: 195px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border: 1px solid $gray;
+    outline: none;
+
+    &_active,
+    &:hover,
+    &:active,
+    &:focus {
+      @include button-hover;
+    }
+  }
+
+  &__feedback-button {
+    @include text-semibold-14;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 30px;
+    padding: 17px 20px;
+    background-color: $white;
+    color: $red;
+    border: 1px solid $red;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+
+    &:hover,
+    &:active,
+    &:focus {
+      @include button-hover;
+    }
+  }
+
+  &__item-list {
+    @include list-reset;
+    @include flex-column(flex-start, flex-start);
+    margin-top: 10px;
+
+    &_visually-hidden {
+      @include visually-hidden-mixin;
+    }
+  }
+
+  &__item {
+    @include flex-row(space-between, flex-start);
+    width: $specification;
+    margin-top: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid $gray;
+  }
+
+  &__item-key {
+    @include text-regular-16;
+    color: $dark;
+  }
+
+  &__item-value {
+    @include text-regular-16;
+    color: $black;
+  }
+
+  &__contact-wrapper {
+    @include flex-row(flex-start, flex-start);
+  }
+
+  &__contact-caption {
+    @include title-bold-16;
+    max-width: 275px;
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: $text;
+  }
+
+  &__contact-text {
+    @include text-semibold-14;
+    max-width: 275px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: $text;
+
+    span {
+      display: block;
+    }
+  }
+
+  &__map-wrapper {
+    width: 431px;
+    height: 271px;
+    position: relative;
+    width: 431px;
+    height: 271px;
+    margin-top: 30px;
+    margin-left: 74px;
+  }
+
+  &__map-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__reviews-wrapper {
+    position: relative;
+  }
+
+  &__submit-button {
+    @include text-semibold-14;
+    padding: 17px 20px;
+    border: none;
+    background-color: $red;
+    color: $white;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+  }
+
+  &__reviews-list {
+    @include flex-column(flex-start, flex-start);
+    @include list-reset;
+    margin-top: 10px;
+  }
+
+  &__reviews-item {
+    @include flex-column(flex-start, flex-start);
+    border-bottom: 1px solid $black-20;
+  }
+
+  &__reviews-name {
+    @include text-semibold-20;
+    color: $dark;
+    margin-top: 20px;
+  }
+
+  &__advantages-caption {
+    @include text-semibold-15;
+    color: $black;
+    margin-top: 12px;
+  }
+
+  p {
+    @include text-regular-15;
+    color: $black;
+    margin-top: 3px;
+    margin-bottom: 0;
+  }
+
+  &__timestamp {
+    @include text-regular-14;
+    color: $black;
+    opacity: 0.4;
+  }
+
+  &__advice {
+    @include text-regular-15;
+    color: $red;
+    margin-left: 15px;
+  }
+
+  &__answer {
+    @include text-regular-16;
+    color: $red;
+    margin-left: 26px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+
+  &__timestamp-wrapper {
+    @include flex-row(flex-start, center);
+    margin-top: 25px;
+    margin-bottom: 20px;
+  }
+
+  &__stars {
+    @include flex-row(flex-start, center);
+    margin-top: 20px;
+
+    svg {
+      margin-right: 5px;
+    }
+  }
+
+  &__red-star {
+    path {
+      fill: $red;
+    }
+  }
+}
