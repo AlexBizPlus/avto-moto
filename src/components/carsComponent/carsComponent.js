@@ -1,12 +1,12 @@
 import React from "react";
-import "../scss/components/CarsComponent.scss";
-import Slider from "../components/Slider";
-import Tabs from "../components/Tabs";
-import { ReactComponent as FuelSvg } from "../images/fuel.svg";
-import { ReactComponent as TransmissionSvg } from "../images/transmission.svg";
-import { ReactComponent as PowerSvg } from "../images/power.svg";
-import { ReactComponent as VolumeSvg } from "../images/volume.svg";
-import { CarDetails } from "../const";
+import "./carsComponent.scss";
+import Slider from "../slider/slider";
+import Tabs from "../tabs/tabs";
+import { ReactComponent as FuelSvg } from "../../images/fuel.svg";
+import { ReactComponent as TransmissionSvg } from "../../images/transmission.svg";
+import { ReactComponent as PowerSvg } from "../../images/power.svg";
+import { ReactComponent as VolumeSvg } from "../../images/volume.svg";
+import { CarDetails } from "../../const";
 
 const CarsComponent = () => {
   const setIcon = (flag) => {
@@ -29,15 +29,16 @@ const CarsComponent = () => {
   };
 
   const splitPrice = (elem) => {
-    const str = elem.toString().split("").reverse();
-    const result = str.reduce((sum, item, index) => {
-      if ((index + 1) % 3 === 0) {
-        return sum + item + " ";
-      } else {
-        return sum + item;
-      }
-    }, "");
-    return result.split("").reverse().join("").trim();
+    const str = elem.toString().split("");
+    return str
+      .reduce((sum, item, index) => {
+        if ((str.length - index) % 3 === 0) {
+          return sum + " " + item;
+        } else {
+          return sum + item;
+        }
+      }, "")
+      .trim();
   };
 
   return (
@@ -76,7 +77,7 @@ const CarsComponent = () => {
           </button>
           <button
             type="button"
-            className="cars-component__button cars-component__button_white cars-component__button_margin-top"
+            className="cars-component__button cars-component__button--white cars-component__button--margin-top"
           >
             В КРЕДИТ ОТ 11 000 <span>₽</span>
           </button>

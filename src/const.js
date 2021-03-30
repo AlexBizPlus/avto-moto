@@ -67,13 +67,13 @@ export const CarDetails = {
     old: 2400000,
   },
   specification: {
-    Трансмиссия: "Роботизированная",
-    "Мощность двигателя, л.с.": 249,
-    "Тип двигателя": "Бензиновый",
-    Привод: "Полный",
-    "Объем двигателя, л": 2.4,
-    "Макс. крутящий момент": "370/4500",
-    "Количество цилиндров": 4,
+    transmission: "Роботизированная",
+    power: 249,
+    fuel: "Бензиновый",
+    drive: "Полный",
+    volume: 2.4,
+    torque: "370/4500",
+    cylinders: 4,
   },
 };
 
@@ -99,6 +99,28 @@ export const ModelReviewList = [
     commentId: 2,
   },
 ];
+
+export const SpecificationAdapter = {
+  transmission: "Трансмиссия",
+  power: "Мощность двигателя, л.с.",
+  fuel: "Тип двигателя",
+  drive: "Привод",
+  volume: "Объем двигателя, л",
+  torque: "Макс. крутящий момент",
+  cylinders: "Количество цилиндров",
+};
+
+export const MapSettings = {
+  center: {
+    lat: 59.968137,
+    lng: 30.316263,
+  },
+  zoom: 8,
+  marker: {
+    lat: 59.968137,
+    lng: 30.316263,
+  },
+};
 
 export const MAX_RATING = 5;
 export const ADVICE_RATING = 3;

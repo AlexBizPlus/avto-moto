@@ -1,0 +1,203 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.tabs {
+  @include flex-column(flex-start, flex-start);
+}
+
+.tabs__button-list {
+  @include flex-row(flex-start, flex-start);
+}
+
+.tabs__button {
+  @include text-regular-20;
+  line-height: 26px;
+  background-color: $white;
+  color: $dark;
+  width: 195px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  padding-left: 14px;
+  padding-right: 14px;
+  border: 1px solid $gray;
+  outline: none;
+  cursor: pointer;
+
+  &_active,
+  &:hover,
+  &:active,
+  &:focus {
+    @include button-hover;
+  }
+}
+
+.tabs__feedback-button {
+  @include text-semibold-14;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 30px;
+  padding: 17px 20px;
+  background-color: $white;
+  color: $red;
+  border: 1px solid $red;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover,
+  &:active,
+  &:focus {
+    @include button-hover;
+  }
+}
+
+.tabs__item-list {
+  @include list-reset;
+  @include flex-column(flex-start, flex-start);
+  margin-top: 10px;
+}
+
+.tabs__item {
+  @include flex-row(space-between, flex-start);
+  width: $specification;
+  margin-top: 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid $gray;
+}
+
+.tabs__item-key {
+  @include text-regular-16;
+  color: $dark;
+}
+
+.tabs__item-value {
+  @include text-regular-16;
+  color: $black;
+}
+
+.tabs__contact-wrapper {
+  @include flex-row(flex-start, flex-start);
+}
+
+.tabs__contact-caption {
+  @include title-bold-16;
+  max-width: 275px;
+  margin-top: 30px;
+  margin-bottom: 0;
+  color: $text;
+}
+
+.tabs__contact-text {
+  @include text-semibold-14;
+  max-width: 275px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: $text;
+
+  span {
+    display: block;
+  }
+}
+
+.tabs__map-wrapper {
+  width: 431px;
+  height: 271px;
+  position: relative;
+  width: 431px;
+  height: 271px;
+  margin-top: 30px;
+  margin-left: 74px;
+}
+
+.tabs__map-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.tabs__reviews-wrapper {
+  position: relative;
+}
+
+.tabs__submit-button {
+  @include text-semibold-14;
+  padding: 17px 20px;
+  border: none;
+  background-color: $red;
+  color: $white;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+}
+
+.tabs__reviews-list {
+  @include flex-column(flex-start, flex-start);
+  @include list-reset;
+  margin-top: 10px;
+}
+
+.tabs__reviews-item {
+  @include flex-column(flex-start, flex-start);
+  border-bottom: 1px solid $black-20;
+}
+
+.tabs__reviews-name {
+  @include text-semibold-20;
+  color: $dark;
+  margin-top: 20px;
+}
+
+.tabs__advantages-caption {
+  @include text-semibold-15;
+  color: $black;
+  margin-top: 12px;
+}
+
+.tabs__advantages-text {
+  @include text-regular-15;
+  color: $black;
+  margin-top: 3px;
+  margin-bottom: 0;
+}
+
+.tabs__timestamp {
+  @include text-regular-14;
+  color: $black;
+  opacity: 0.4;
+}
+
+.tabs__advice {
+  @include text-regular-15;
+  color: $red;
+  margin-left: 15px;
+}
+
+.tabs__answer {
+  @include text-regular-16;
+  color: $red;
+  margin-left: 26px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.tabs__timestamp-wrapper {
+  @include flex-row(flex-start, center);
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+
+.tabs__stars {
+  @include flex-row(flex-start, center);
+  margin-top: 20px;
+
+  svg {
+    margin-right: 5px;
+  }
+}
+
+.tabs__red-star {
+  path {
+    fill: $red;
+  }
+}

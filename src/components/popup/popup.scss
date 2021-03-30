@@ -1,0 +1,189 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $popup-back;
+  z-index: 1;
+  overflow: hidden;
+
+  form {
+    @include flex-column(flex-start, center);
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.popup__wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: $desktop-popup;
+  min-height: 415px;
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-bottom: 35px;
+  transform: translate(-50%, -50%);
+  background-color: $light-gray;
+  z-index: 2;
+}
+
+.popup__feedback-title {
+  @include title-semibold-25;
+  color: $dark;
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+
+.popup__close-button {
+  @include flex-row(center, center);
+  position: absolute;
+  top: 25px;
+  right: -10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.popup__container {
+  @include flex-row(space-between, flex-start);
+  width: 100%;
+  padding-top: 47px;
+  padding-bottom: 35px;
+}
+
+.popup__input-wrapper {
+  @include flex-column(flex-start, space-around);
+  position: relative;
+  width: 300px;
+
+  input {
+    height: 50px;
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.popup__textarea-wrapper {
+  @include flex-column(flex-start, space-around);
+  width: 300px;
+}
+
+.popup__submit-button {
+  @include text-semibold-14;
+  padding: 17px 20px;
+  border: none;
+  background-color: $red;
+  color: $white;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $red-hover;
+  }
+}
+
+.popup__textarea-label {
+  @include flex-column(flex-start, space-around);
+  width: 100%;
+
+  &--requared {
+    @include requared;
+  }
+}
+
+.popup__textarea {
+  @include text-regular-14;
+  height: 118px;
+  resize: none;
+  padding: 15px 25px;
+
+  &::-webkit-input-placeholder {
+    color: $dark;
+  }
+
+  &:active::-webkit-input-placeholder,
+  &:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+}
+
+.popup__rating-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 33px;
+
+  span {
+    @include text-semibold-15;
+    color: $black;
+    margin-right: 5px;
+    order: 5;
+  }
+}
+
+.popup__rating-star {
+  @include flex-row(center, center);
+}
+
+.popup__rating-star-label {
+  margin-left: 8px;
+
+  &:hover path {
+    fill: $red;
+  }
+  &:hover ~ label path {
+    fill: $red;
+  }
+}
+
+input[type="radio"]:checked ~ label {
+  path {
+    fill: $red;
+  }
+}
+
+.popup__input {
+  @include text-regular-14;
+  padding-left: 25px;
+  padding-right: 25px;
+  border: 1px solid $dark-20;
+
+  &::-webkit-input-placeholder {
+    color: $dark;
+  }
+
+  &:active::-webkit-input-placeholder,
+  &:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+
+  &error {
+    border: 1px solid $error;
+  }
+
+  &--requared {
+    @include requared;
+  }
+}
+
+.popup__error {
+  @include text-regular-14;
+  position: absolute;
+  top: -23px;
+  left: 0;
+  color: $error;
+}

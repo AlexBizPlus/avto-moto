@@ -1,19 +1,14 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React, { useEffect } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { myPropTypes as PropTypes } from "../../prop";
 import clsx from "clsx";
-import "../scss/components/Slider.scss";
+import "./imgList.scss";
 import {
   setSliderImage,
   setSliderCurrent,
-} from "../store/actions/slider-actions";
-import { DEFAULT_SLIDE } from "../const";
-import ImgCar1 from "../images/car-1.png";
-import ImgCar2 from "../images/car-2.png";
-import ImgCar3 from "../images/car-3.png";
-import { ReactComponent as ArrowRightSvg } from "../images/arrow-right.svg";
-
-const imageList = [ImgCar1, ImgCar2, ImgCar3];
+} from "../../store/actions/slider-actions";
+import { ReactComponent as ArrowRightSvg } from "../../images/arrow-right.svg";
 
 const ImgList = ({ imageList }) => {
   const currentSlide = useSelector((state) => state.SLIDER.currentSlide);
@@ -21,8 +16,6 @@ const ImgList = ({ imageList }) => {
 
   const onSliderClick = (evt) => {
     evt.preventDefault();
-    console.log(`evt.currentTarget`, evt.currentTarget);
-    console.log(`evt.target`, evt.target);
     switch (true) {
       case currentSlide < imageList.length - 1 &&
         (evt.target.id === "ArrowRight" ||
@@ -45,37 +38,39 @@ const ImgList = ({ imageList }) => {
 
   if (imageList.length > 0) {
     return (
-      <div className="slider__list-wrapper" onClick={onSliderClick}>
+      <div className="imgList__list-wrapper" onClick={onSliderClick}>
         <button
           disabled={currentSlide === 0}
-          className="slider__arrow slider__arrow_left"
+          className="imgList__arrow imgList__arrow_left"
           id="ArrowLeft"
           type="button"
           aria-label="ArrowLeft"
         >
           <ArrowRightSvg
-            className={clsx({ slider__svg_disabled: currentSlide === 0 })}
+            className={clsx("imgList__svg", {
+              "imgList__svg--disabled": currentSlide === 0,
+            })}
           />
         </button>
-        <ul className="slider__list slider__list_new">
+        <ul className="imgList__list imgList__list--new">
           {imageList.map((item, i) => {
             return (
               <li key={`index${i}`}>
-                <img width={128} heigh={80} src={item} alt="car photo" />
+                <img width={128} height={80} src={item} alt="car photo" />
               </li>
             );
           })}
         </ul>
         <button
           disabled={currentSlide === imageList.length - 1}
-          className="slider__arrow"
+          className="imgList__arrow"
           id="ArrowRight"
           type="button"
           aria-label="ArrowRight"
         >
           <ArrowRightSvg
-            className={clsx({
-              slider__svg_disabled: currentSlide === imageList.length - 1,
+            className={clsx("imgList__svg", {
+              "imgList__svg--disabled": currentSlide === imageList.length - 1,
             })}
           />
         </button>
@@ -86,27 +81,8 @@ const ImgList = ({ imageList }) => {
   }
 };
 
-const Slider = ({ classNameProp }) => {
-  const imgSrc = useSelector((state) => state.SLIDER.imageSrc);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(setSliderImage(imageList[DEFAULT_SLIDE]));
-    dispatch(setSliderCurrent(DEFAULT_SLIDE));
-  }, [dispatch]);
-
-  return (
-    <div className={["slider slider_new", classNameProp].join(" ")}>
-      <img
-        className="slider__img"
-        width={600}
-        heigh={375}
-        src={imgSrc}
-        alt="car photo"
-      />
-      <ImgList imageList={imageList} />
-    </div>
-  );
+ImgList.propTypes = {
+  imageList: PropTypes.imageList,
 };
 
-export default Slider;
+export default ImgList;

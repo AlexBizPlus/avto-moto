@@ -50,6 +50,19 @@
   @include visually-hidden-mixin;
 }
 
+@mixin requared {
+  position: relative;
+
+  &::before {
+    @include text-regular-16;
+    position: absolute;
+    content: "*";
+    top: 9px;
+    left: 12px;
+    color: $red;
+  }
+}
+
 @mixin button-hover {
   background-color: $red;
   color: $white;

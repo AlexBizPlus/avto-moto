@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../scss/pages/Error404.scss";
+import "./error404Page.scss";
 import { Routes } from "../../const";
 
 const Error404 = () => {

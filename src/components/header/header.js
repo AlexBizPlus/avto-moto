@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { HeaderList } from "../const";
-import "../scss/components/Header.scss";
-import { ReactComponent as LogoSvg } from "../images/logo.svg";
-import { ReactComponent as LogoSignSvg } from "../images/logo-sign.svg";
+import { HeaderList } from "../../const";
+import "./header.scss";
+import { ReactComponent as LogoSvg } from "../../images/logo.svg";
+import { ReactComponent as LogoSignSvg } from "../../images/logo-sign.svg";
 
 const Header = () => {
   return (

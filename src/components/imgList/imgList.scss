@@ -1,0 +1,47 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.imgList__list-wrapper {
+  @include flex-row(space-between, center);
+  width: 100%;
+  margin-top: 39px;
+}
+
+.imgList__list {
+  @include list-reset;
+  @include flex-row(space-between, center);
+
+  li {
+    @include flex-row(center, center);
+    margin-left: 25px;
+  }
+
+  li:first-child {
+    margin-left: 0;
+  }
+
+  img {
+    width: 128px;
+    height: 80px;
+  }
+}
+
+.imgList__arrow {
+  @include flex-row(center, center);
+  width: 52px;
+  height: 52px;
+  border: 1px solid $gray;
+  border-radius: 50%;
+  outline: none;
+  background-color: transparent;
+}
+
+.imgList__arrow_left {
+  transform: rotate(0.5turn);
+}
+
+.imgList__svg--disabled {
+  path {
+    stroke: $gray;
+  }
+}

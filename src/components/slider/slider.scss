@@ -1,0 +1,30 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.slider {
+  @include flex-column(flex-start, center);
+  position: relative;
+  width: $desktop-left;
+
+  &--new {
+    &::before {
+      @include text-regular-10;
+      content: "new model";
+      position: absolute;
+      top: 0;
+      left: 11px;
+      min-width: 122px;
+      padding: 7px 10px;
+      background-color: $red;
+      text-transform: uppercase;
+      letter-spacing: 0.08rem;
+      color: $white;
+      text-align: center;
+    }
+  }
+}
+
+.slider__img {
+  width: 600px;
+  height: 375px;
+}

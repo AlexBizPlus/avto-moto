@@ -1,0 +1,122 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.cars-component {
+  @include flex-column(flex-start, center);
+  width: 100%;
+}
+
+.cars-component__wrapper {
+  @include flex-row(flex-start, flex-start);
+  flex-wrap: wrap;
+  width: $desktop;
+}
+
+.cars-component__right-section {
+  @include flex-column(flex-start, flex-start);
+  max-width: $desktop-right;
+  margin-top: 74px;
+  margin-left: 57px;
+}
+
+.cars-component__slider {
+  margin-top: 90px;
+  margin-bottom: 90px;
+  padding-left: 11px;
+}
+
+.cars-component__header {
+  @include title-bold-30;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.cars-component__short-list-wrapper {
+  @include list-reset;
+  @include flex-row(flex-start, center);
+  margin-top: 22px;
+  margin-left: 10px;
+}
+
+.cars-component__short-list-item {
+  @include flex-column(flex-start, center);
+  @include text-regular-16;
+  margin-right: 7px;
+  color: $dark;
+  opacity: 0.5;
+}
+
+.cars-component__short-list-icon {
+  @include flex-column(center, center);
+  width: 40px;
+  height: 40px;
+}
+
+.cars-component__price-wrapper {
+  @include flex-row(flex-start, center);
+  margin-top: 37px;
+  margin-bottom: 37px;
+  color: $dark;
+}
+
+.cars-component__price-actual {
+  @include text-bold-35;
+  margin-right: 33px;
+}
+
+.cars-component__price-old {
+  @include text-regular-20;
+  color: $dark-50;
+  position: relative;
+
+  &::before {
+    @include pseudo;
+    bottom: 50%;
+    left: -3px;
+    transform: skew(-15deg, -5deg);
+    width: 123px;
+    height: 1px;
+    background-color: $cross-line;
+  }
+}
+
+.cars-component__button {
+  @include text-semibold-14;
+  display: block;
+  padding: 17px 20px;
+  border: none;
+  background-color: $red;
+  color: $white;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+  outline: none;
+  cursor: pointer;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $red-hover;
+  }
+
+  &--white {
+    @include text-semibold-14;
+    background-color: $white;
+    color: $red;
+    border: 1px solid $red;
+    outline: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+      @include button-hover;
+    }
+
+    span {
+      @include text-regular-14;
+    }
+  }
+
+  &--margin-top {
+    margin-top: 16px;
+  }
+}

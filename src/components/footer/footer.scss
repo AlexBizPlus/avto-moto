@@ -1,0 +1,36 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.footer {
+  @include flex-column(flex-start, center);
+  width: 100%;
+  background-color: $light-gray;
+  margin-top: 140px;
+}
+
+.footer__wrapper {
+  @include flex-row(center, center);
+  width: $desktop;
+}
+
+.footer__nav {
+  width: 100%;
+}
+
+.footer__list {
+  @include list-reset;
+  @include flex-row(space-between, center);
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.footer__item {
+  padding-left: 10px;
+  padding-right: 10px;
+
+  a {
+    @include text-semibold-16;
+    color: $dark;
+  }
+}

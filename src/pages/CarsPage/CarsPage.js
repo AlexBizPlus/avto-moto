@@ -1,9 +1,9 @@
 import React from "react";
-import "../../scss/pages/CapsPage.scss";
-import Header from "../../components/Header";
-import CarsComponent from "../../components/CarsComponent";
-import Footer from "../../components/Footer";
-import Popup from "../../components/Popup";
+import "./capsPage.scss";
+import Header from "../../components/header/header";
+import CarsComponent from "../../components/carsComponent/carsComponent";
+import Footer from "../../components/footer/footer";
+import Popup from "../../components/popup/popup";
 
 const CarsPage = () => {
   return (

@@ -5,10 +5,10 @@ import {
   BrowserRouter as Router,
   Redirect,
 } from "react-router-dom";
-import "../scss/components/App.scss";
-import { Routes } from "../const";
-import CarsPage from "../pages/CarsPage/CarsPage";
-import Error404 from "../pages/Error404/Error404";
+import "./app.scss";
+import { Routes } from "../../const";
+import CarsPage from "../../pages/carsPage/carsPage";
+import Error404 from "../../pages/error404Page/error404Page";
 
 const App = () => {
   return (

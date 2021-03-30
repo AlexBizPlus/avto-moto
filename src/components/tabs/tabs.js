@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { myPropTypes as PropTypes } from "../../prop";
 import clsx from "clsx";
-import "../scss/components/Tabs.scss";
-import { setActiveTab } from "../store/actions/tabs-actions";
-import { setIsShowPopup } from "../store/actions/tabs-actions";
-import ImgMap from "../images/map.png";
-import { ReactComponent as StarSvg } from "../images/star.svg";
+import "./tabs.scss";
+import { setActiveTab } from "../../store/actions/tabs-actions";
+import { setIsShowPopup } from "../../store/actions/tabs-actions";
+import ImgMap from "../../images/map.png";
+import { ReactComponent as StarSvg } from "../../images/star.svg";
 import {
   ModelReviewList,
   MAX_RATING,
   ADVICE_RATING,
   REVIEW,
   COMMENT_ID,
-} from "../const";
-import SimpleMap from "../components/Map";
+  SpecificationAdapter,
+} from "../../const";
+import SimpleMap from "../map/map";
 
 const tabsList = [
   {
@@ -93,7 +95,13 @@ const Tabs = ({ data }) => {
         {Object.entries(data.specification).map(([itemKey, itemValue], i) => {
           return (
             <li className="tabs__item" key={`item${i}`}>
-              <span className="tabs__item-key">{itemKey}</span>
+              <span className="tabs__item-key">
+                {
+                  Object.entries(SpecificationAdapter).find(
+                    (elem) => elem[0] === itemKey
+                  )[1]
+                }
+              </span>
               <span className="tabs__item-value">{itemValue}</span>
             </li>
           );
@@ -172,7 +180,7 @@ const Tabs = ({ data }) => {
                 </span>
                 <span className="tabs__advantages">{item.disadvantages}</span>
                 <span className="tabs__advantages-caption">Комментарий</span>
-                <p>{item.comment}</p>
+                <p className="tabs__advantages-text">{item.comment}</p>
                 <div
                   className={clsx("tabs__stars", {
                     "visually-hidden": !item.rating,
@@ -212,6 +220,10 @@ const Tabs = ({ data }) => {
       </div>
     </section>
   );
+};
+
+Tabs.propTypes = {
+  data: PropTypes.carDetails,
 };
 
 export default Tabs;
