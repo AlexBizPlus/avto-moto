@@ -19,15 +19,12 @@ const Popup = () => {
   const [isShowErrors, setIsShowErrors] = useState(false);
 
   const onPopupClick = (evt) => {
-    switch (true) {
-      case evt.target.id === "feedbackWrapper" ||
-        evt.currentTarget.id === "feedbackClose" ||
-        evt.code === "Escape":
-        dispatch(setIsShowPopup(false));
-        return;
-
-      default:
-        return;
+    if (
+      evt.target.id === "feedbackWrapper" ||
+      evt.currentTarget.id === "feedbackClose" ||
+      evt.code === "Escape"
+    ) {
+      dispatch(setIsShowPopup(false));
     }
   };
 

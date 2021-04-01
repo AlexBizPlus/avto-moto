@@ -1,5 +1,5 @@
 export const Routes = {
-  CARS: "/cars",
+  CARS: "/",
   ERROR404: "/404",
 };
 
