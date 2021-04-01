@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./error404Page.scss";
+import "./errorPage.scss";
 import { Routes } from "../../const";
 
-const Error404 = () => {
+const ErrorPage = () => {
   return (
     <div className="error404">
       <p>Page not found</p>
@@ -14,4 +14,4 @@ const Error404 = () => {
   );
 };
 
-export default Error404;
+export default ErrorPage;
