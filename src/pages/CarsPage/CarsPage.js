@@ -1,5 +1,5 @@
 import React from "react";
-import "./capsPage.scss";
+import "./carsPage.scss";
 import Header from "../../components/header/header";
 import CarsComponent from "../../components/carsComponent/carsComponent";
 import Footer from "../../components/footer/footer";

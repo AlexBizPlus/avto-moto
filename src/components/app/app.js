@@ -7,8 +7,8 @@ import {
 } from "react-router-dom";
 import "./app.scss";
 import { Routes } from "../../const";
-import CarsPage from "../../pages/carsPage/carsPage";
-import Error404 from "../../pages/error404Page/error404Page";
+import CarsPage from "../../pages/CarsPage/CarsPage";
+import Error404 from "../../pages/Error404Page/Error404Page";
 
 const App = () => {
   return (
