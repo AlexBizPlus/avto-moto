@@ -10,7 +10,8 @@
 
 .footer__wrapper {
   @include flex-row(center, center);
-  width: $desktop;
+  width: 100%;
+  max-width: $desktop;
 }
 
 .footer__nav {

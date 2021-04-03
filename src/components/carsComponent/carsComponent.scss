@@ -9,7 +9,8 @@
 .cars-component__wrapper {
   @include flex-row(flex-start, flex-start);
   flex-wrap: wrap;
-  width: $desktop;
+  width: 100%;
+  max-width: $desktop;
 }
 
 .cars-component__right-section {
