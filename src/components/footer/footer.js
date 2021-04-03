@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FooterList } from "../../const";
 import "./footer.scss";
 
@@ -12,7 +12,12 @@ const Footer = () => {
             {FooterList.map((item) => {
               return (
                 <li className="footer__item" key={item.title}>
-                  <Link to={item.link}>{item.title}</Link>
+                  <NavLink
+                    to={item.link}
+                    activeClassName="footer__item--active"
+                  >
+                    {item.title}
+                  </NavLink>
                 </li>
               );
             })}

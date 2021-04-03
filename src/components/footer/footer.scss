@@ -19,15 +19,36 @@
 
 .footer__list {
   @include list-reset;
-  @include flex-row(space-between, center);
+  @include flex-row(flex-end, flex-start);
   width: 100%;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  padding-left: 18px;
+  padding-bottom: 30px;
+  flex-wrap: wrap;
 }
 
 .footer__item {
+  margin-left: 57px;
+  padding-top: 30px;
   padding-left: 10px;
-  padding-right: 10px;
+
+  &--active,
+  &:hover {
+    position: relative;
+
+    &::before {
+      @include pseudo;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $dark;
+    }
+  }
+
+  &:first-child {
+    margin-left: 0;
+    padding-left: 0;
+  }
 
   a {
     @include text-semibold-16;

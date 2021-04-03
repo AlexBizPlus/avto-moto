@@ -3,6 +3,7 @@
 
 .tabs {
   @include flex-column(flex-start, flex-start);
+  margin-left: 18px;
 }
 
 .tabs__button-list {
@@ -37,7 +38,7 @@
   top: 0;
   right: 0;
   margin-top: 30px;
-  padding: 17px 20px;
+  padding: 16px 20px;
   background-color: $white;
   color: $red;
   border: 1px solid $red;
@@ -61,7 +62,7 @@
 .tabs__item {
   @include flex-row(space-between, flex-start);
   width: $specification;
-  margin-top: 20px;
+  margin-top: 19px;
   padding-bottom: 8px;
   border-bottom: 1px solid $gray;
 }
@@ -149,15 +150,50 @@
 
 .tabs__advantages-caption {
   @include text-semibold-15;
+  position: relative;
   color: $black;
   margin-top: 12px;
+
+  &--plus {
+    padding-left: 19px;
+
+    &::before {
+      position: absolute;
+      content: "+";
+      top: 0;
+      left: 0;
+      font: text-regular-15;
+      color: $red;
+    }
+  }
+
+  &--minus {
+    padding-left: 19px;
+
+    &::before {
+      position: absolute;
+      content: "-";
+      top: 0;
+      left: 0;
+      font: text-regular-15;
+      color: $error;
+    }
+  }
+}
+
+.tabs__advantages {
+  @include text-regular-15;
+  color: $black;
+  margin-top: 3px;
+  margin-bottom: 0;
 }
 
 .tabs__advantages-text {
   @include text-regular-15;
   color: $black;
-  margin-top: 3px;
+  margin-top: 4px;
   margin-bottom: 0;
+  padding-left: 19px;
 }
 
 .tabs__timestamp {
@@ -184,7 +220,7 @@
 .tabs__timestamp-wrapper {
   @include flex-row(flex-start, center);
   margin-top: 25px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .tabs__stars {

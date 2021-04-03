@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { HeaderList } from "../../const";
 import "./header.scss";
 import { ReactComponent as LogoSvg } from "../../images/logo.svg";
@@ -18,7 +18,12 @@ const Header = () => {
             {HeaderList.map((item) => {
               return (
                 <li className="header__item" key={item.title}>
-                  <Link to={item.link}>{item.title}</Link>
+                  <NavLink
+                    to={item.link}
+                    activeClassName="header__item--active"
+                  >
+                    {item.title}
+                  </NavLink>
                 </li>
               );
             })}

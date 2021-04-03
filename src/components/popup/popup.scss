@@ -5,8 +5,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: $popup-back;
   z-index: 1;
   overflow: hidden;
@@ -112,11 +112,6 @@
   &::-webkit-input-placeholder {
     color: $dark;
   }
-
-  &:active::-webkit-input-placeholder,
-  &:focus::-webkit-input-placeholder {
-    color: transparent;
-  }
 }
 
 .popup__rating-wrapper {
@@ -141,6 +136,7 @@
 
 .popup__rating-star-label {
   margin-left: 8px;
+  cursor: pointer;
 
   &:hover path {
     fill: $red;
@@ -164,11 +160,6 @@ input[type="radio"]:checked ~ label {
 
   &::-webkit-input-placeholder {
     color: $dark;
-  }
-
-  &:active::-webkit-input-placeholder,
-  &:focus::-webkit-input-placeholder {
-    color: transparent;
   }
 
   &error {

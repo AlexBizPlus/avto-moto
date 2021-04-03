@@ -90,27 +90,29 @@ const Popup = () => {
       <div className="popup__rating-wrapper" onClick={onRadioInputsClick}>
         {new Array(MAX_RATING * 2 + 1).fill("").map((_item, i) => {
           if (i === 0) {
-            return <span>Оцените товар:</span>;
+            return <span key={`item${i}`}>Оцените товар:</span>;
           }
           if (i % 2 !== 0) {
             let index = i === 1 ? MAX_RATING : MAX_RATING - (i + 1) / 2 + 1;
             return (
               <input
-                class="visually-hidden"
+                className="visually-hidden"
                 type="radio"
                 name="rating"
                 id={`rating-${index}`}
                 value={index}
+                key={`item${i}`}
               />
             );
           } else {
             return (
               <label
-                class="popup__rating-star-label"
-                for={`rating-${MAX_RATING - i / 2 + 1}`}
+                className="popup__rating-star-label"
+                htmlFor={`rating-${MAX_RATING - i / 2 + 1}`}
+                key={`item${i}`}
               >
                 <svg
-                  class="popup__rating-star"
+                  className="popup__rating-star"
                   width="27"
                   height="25"
                   viewBox="0 0 27 25"
@@ -120,7 +122,7 @@ const Popup = () => {
                   <path
                     d="M13.5688 0L16.6151 9.52282H26.4734L18.4979 15.4082L21.5443 24.9311L13.5688 19.0456L5.59324 24.9311L8.63961 15.4082L0.664102 9.52282H10.5224L13.5688 0Z"
                     fill="#BDBEC2"
-                    fill-opacity="0.7"
+                    fillOpacity="0.7"
                   />
                 </svg>
               </label>

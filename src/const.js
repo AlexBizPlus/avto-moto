@@ -48,7 +48,7 @@ export const FooterList = [
     link: Routes.ERROR404,
   },
   {
-    title: "Test draiv",
+    title: "Test drive",
     link: Routes.ERROR404,
   },
 ];

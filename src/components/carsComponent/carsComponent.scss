@@ -15,12 +15,12 @@
 .cars-component__right-section {
   @include flex-column(flex-start, flex-start);
   max-width: $desktop-right;
-  margin-top: 74px;
+  margin-top: 71px;
   margin-left: 57px;
 }
 
 .cars-component__slider {
-  margin-top: 90px;
+  margin-top: 88px;
   margin-bottom: 90px;
   padding-left: 11px;
 }
@@ -35,7 +35,6 @@
   @include list-reset;
   @include flex-row(flex-start, center);
   margin-top: 22px;
-  margin-left: 10px;
 }
 
 .cars-component__short-list-item {
@@ -44,6 +43,7 @@
   margin-right: 7px;
   color: $dark;
   opacity: 0.5;
+  min-width: 70px;
 }
 
 .cars-component__short-list-icon {
@@ -67,6 +67,7 @@
 .cars-component__price-old {
   @include text-regular-20;
   color: $dark-50;
+  letter-spacing: 0.05rem;
   position: relative;
 
   &::before {
@@ -87,7 +88,7 @@
   border: none;
   background-color: $red;
   color: $white;
-  letter-spacing: 0.12rem;
+  letter-spacing: 0.1rem;
   text-transform: uppercase;
   outline: none;
   cursor: pointer;
@@ -104,6 +105,7 @@
     color: $red;
     border: 1px solid $red;
     outline: none;
+    padding: 16px 20px;
 
     &:hover,
     &:active,
@@ -117,6 +119,6 @@
   }
 
   &--margin-top {
-    margin-top: 16px;
+    margin-top: 14px;
   }
 }

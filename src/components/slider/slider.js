@@ -29,7 +29,7 @@ const Slider = ({ classNameProp }) => {
       <img
         className="slider__img"
         width={600}
-        heigh={375}
+        height={375}
         src={imgSrc}
         alt="car photo"
       />

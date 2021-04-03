@@ -164,23 +164,31 @@ const Tabs = ({ data }) => {
               <li className="tabs__reviews-item" key={item.commentId}>
                 <span className="tabs__reviews-name">{item.name}</span>
                 <span
-                  className={clsx("tabs__advantages-caption", {
-                    "visually-hidden": !item.advantages,
-                  })}
+                  className={clsx(
+                    "tabs__advantages-caption tabs__advantages-caption--plus",
+                    {
+                      "visually-hidden": !item.advantages,
+                    }
+                  )}
                 >
                   Достоинства
                 </span>
-                <span className="tabs__advantages">{item.advantages}</span>
+                <span className="tabs__advantages-text">{item.advantages}</span>
                 <span
-                  className={clsx("tabs__advantages-caption", {
-                    "visually-hidden": !item.disadvantages,
-                  })}
+                  className={clsx(
+                    "tabs__advantages-caption tabs__advantages-caption--minus",
+                    {
+                      "visually-hidden": !item.disadvantages,
+                    }
+                  )}
                 >
                   Недостатки
                 </span>
-                <span className="tabs__advantages">{item.disadvantages}</span>
+                <span className="tabs__advantages-text">
+                  {item.disadvantages}
+                </span>
                 <span className="tabs__advantages-caption">Комментарий</span>
-                <p className="tabs__advantages-text">{item.comment}</p>
+                <p className="tabs__advantages">{item.comment}</p>
                 <div
                   className={clsx("tabs__stars", {
                     "visually-hidden": !item.rating,
