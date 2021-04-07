@@ -56,3 +56,10 @@
     color: $dark;
   }
 }
+
+@media (max-width: calc(#{$desktop} + 30px) ) {
+
+  .footer__list {
+    padding-right: 10px;
+  }
+}

@@ -54,3 +54,10 @@
     color: $dark;
   }
 }
+
+@media (max-width: calc(#{$desktop} + 30px) ) {
+
+  .header__list {
+    margin-right: 10px;
+  }
+}

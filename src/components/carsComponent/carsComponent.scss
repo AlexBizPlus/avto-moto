@@ -17,7 +17,8 @@
   @include flex-column(flex-start, flex-start);
   max-width: $desktop-right;
   margin-top: 71px;
-  margin-left: 57px;
+  margin-left: 37px;
+  padding-left: 20px;
 }
 
 .cars-component__slider {
@@ -62,7 +63,7 @@
 
 .cars-component__price-actual {
   @include text-bold-35;
-  margin-right: 33px;
+  margin-right: 23px;
 }
 
 .cars-component__price-old {
@@ -70,13 +71,15 @@
   color: $dark-50;
   letter-spacing: 0.05rem;
   position: relative;
+  padding-top: 3px;
+  margin-right: 10px;
+  margin-left: 10px;
 
   &::before {
     @include pseudo;
     bottom: 50%;
     left: -3px;
     transform: skew(-15deg, -5deg);
-    // width: 123px;
     width: calc(100% + 10px);
     height: 1px;
     background-color: $cross-line;
@@ -122,5 +125,22 @@
 
   &--margin-top {
     margin-top: 14px;
+  }
+}
+
+@media (max-width: calc(#{$min-desktop} + 30px) ) {
+
+  .cars-component__price-actual {
+    margin-right: auto;
+  }
+}
+
+
+
+
+@media (max-width: calc(#{$min-desktop}) ) {
+
+  .cars-component__right-section {
+    margin-left: auto;
   }
 }

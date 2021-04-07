@@ -62,7 +62,7 @@
 .tabs__item {
   @include flex-row(space-between, flex-start);
   width: $specification;
-  margin-top: 19px;
+  margin-top: 20px;
   padding-bottom: 8px;
   border-bottom: 1px solid $gray;
 }
